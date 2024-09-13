@@ -1,1 +1,58 @@
-hi
+
+#include <stdio.h>
+#include <conio.h>
+#include <math.h>
+
+int main() {
+    char op;
+    float fn, sn;
+
+start:
+    printf("\nEnter first number: ");
+    scanf("%f", &fn);
+
+    printf("\nEnter operator: ");
+    scanf(" %c", &op);
+
+    switch (op) {
+        case '+':
+            printf("Enter second number: ");
+            scanf("%f", &sn);
+            printf("%f", fn + sn);
+            goto start;
+            break;
+        case '-':
+            printf("Enter second number: ");
+            scanf("%f", &sn);
+            printf("%f", fn - sn);
+            goto start;
+            break;
+        case '*':
+            printf("Enter second number: ");
+            scanf("%f", &sn);
+            printf("Multiply = %f", fn * sn);
+            goto start;
+            break;
+        case '/':
+            printf("Enter second number: ");
+            scanf("%f", &sn);
+            if (sn == 0) {
+                printf("\nError: Divide by zero");
+                goto start;
+            } else {
+                printf("\nDivide = %f", fn / sn);
+                goto start;
+            }
+            break;
+        case '%':
+            printf("Enter second number: ");
+            scanf("%f", &sn);
+            printf("\nRemainder = %f", fmod(fn, sn));
+            goto start;
+            break;
+        default:
+            printf("\nError");
+    }
+
+    return 0;
+}
